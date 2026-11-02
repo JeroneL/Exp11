@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Online Resume and CV portfolio." />
+  <title>Online Resume / CV</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Resume<span>.</span></a>
+    <nav><a href="#resume">Resume</a><a href="#manager">Resume Manager</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="resume">
+      <div class="hero-copy">
+        <p class="eyebrow">ONLINE RESUME / CV</p>
+        <h1>Present your story.<br><span>Show your potential.</span></h1>
+        <p class="lead">A clean online CV that keeps your professional details organised. Create a resume record and manage it using Node.js and MongoDB.</p>
+        <a class="primary-btn" href="#manager">Manage my resume ↘</a>
+      </div>
+      <div class="hero-card">
+        <div class="avatar">CV</div>
+        <p class="card-label">YOUR PROFESSIONAL PROFILE</p>
+        <h2>Resume Workspace</h2>
+        <p>Personal details · Skills · Education · Projects</p>
+        <div class="mini-stats"><span><b>01</b><small>CREATE</small></span><span><b>02</b><small>VIEW</small></span><span><b>03</b><small>UPDATE</small></span><span><b>04</b><small>DELETE</small></span></div>
+      </div>
+    </section>
+
+    <section class="manager" id="manager">
+      <div class="section-heading">
+        <div><p class="eyebrow">DATABASE INTEGRATION</p><h2>Resume Manager</h2></div>
+        <button class="secondary-btn" id="resetBtn" type="button">Clear form</button>
+      </div>
+      <div class="manager-grid">
+        <form id="resumeForm" class="form-card">
+          <h3 id="formHeading">Create your resume</h3>
+          <p class="muted">Name, role, and email are required.</p>
+          <input type="hidden" id="resumeId" />
+          <label>Full name *<input id="name" name="name" required placeholder="e.g. Jerone L" /></label>
+          <label>Professional title *<input id="role" name="role" required placeholder="e.g. Computer Science Student" /></label>
+          <div class="form-row">
+            <label>Email *<input id="email" name="email" type="email" required placeholder="you@example.com" /></label>
+            <label>Phone<input id="phone" name="phone" placeholder="+91 ..." /></label>
+          </div>
+          <label>Location<input id="location" name="location" placeholder="Coimbatore, India" /></label>
+          <label>Professional summary<textarea id="summary" name="summary" rows="3" placeholder="Write a short introduction..."></textarea></label>
+          <label>Skills (comma-separated)<input id="skills" name="skills" placeholder="Java, HTML, CSS, MongoDB" /></label>
+          <label>Education<input id="education" name="education" placeholder="Degree, institution, year" /></label>
+          <label>Projects<textarea id="projects" name="projects" rows="3" placeholder="Project names and short descriptions"></textarea></label>
+          <div class="form-row">
+            <label>LinkedIn URL<input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/..." /></label>
+            <label>GitHub URL<input id="github" name="github" type="url" placeholder="https://github.com/..." /></label>
+          </div>
+          <div class="form-actions"><button class="primary-btn" type="submit" id="saveBtn">Save resume</button><button class="secondary-btn" type="button" id="cancelEdit" hidden>Cancel edit</button></div>
+          <p id="status" class="status" role="status">Connect MongoDB Atlas to save resume records.</p>
+        </form>
+
+        <div class="records-panel">
+          <div class="records-title"><h3>Saved resumes</h3><button class="secondary-btn small-btn" id="refreshBtn" type="button">Refresh</button></div>
+          <div id="records" class="records"><div class="empty-state">Loading resume records…</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Online Resume / CV</span><span>Experiment 11 · Node.js + MongoDB CRUD</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

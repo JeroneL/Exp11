@@ -1,0 +1,16 @@
+{
+  "name": "online-resume-experiment-11",
+  "version": "1.0.0",
+  "description": "Online Resume/CV with Node.js and MongoDB CRUD operations for Experiment 11",
+  "main": "api/resume.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  },
+  "devDependencies": {
+    "vercel": "^39.2.0"
+  }
+}
